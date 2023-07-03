@@ -10,14 +10,14 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include "../../push_swap.h"
+#include "push_swap.h"
 
-int	main(int ac, char **av)
+int	main()
 {
 	int		i;
 	t_list	**lst;
 
+	lst = NULL;
 	i = 0;
-	argparsing(ac, av, lst);
-	return ;
+	return (0);
 }

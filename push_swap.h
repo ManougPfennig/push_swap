@@ -17,19 +17,12 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include "./sources/ft_printf/ft_printf.h"
+# include "./sources/libft/libft.h"
 # include <limits.h>
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}				t_list;
-
-int	ft_atoi_usable(char	*str);
-void	error_msg(int i);
+int		ft_atoi_usable(char	*str);
+void	error_msg();
 double	ft_atoidouble(const char *str);
-int	ft_iswspace(char c);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_lstnew(void *content);
+int		ft_iswspace(char c);
 
 #endif

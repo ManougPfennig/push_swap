@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:50:08 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/17 19:03:33 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:08:04 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	*dest = '\0';
 	return (dst_len + src_len);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// int main()
-// {
-// 	printf("%u", ft_strlcat("toto", "", 10));
-// }

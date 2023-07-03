@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:08:48 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/06 17:22:13 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:07:49 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,18 +92,3 @@ char	**ft_split(const char *str, char charset)
 	ft_fill_tab(tab, (char *)str, charset);
 	return (tab);
 }
-
-/*#include <stdio.h>
-int	main(int ac, char **av)
-{
-	int		i;
-	char	**print = ft_split(av[1], av[2][0]);
-
-	i = 0;
-	while (print[i])
-	{
-		printf("%s\n", print[i]);
-		i++;
-	}
-	(void)ac;
-}*/

@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:52:35 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/05 19:22:22 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:07:55 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,3 @@ char	*ft_strdup(char *src)
 		dest[i] = '\0';
 	return (dest);
 }
-
-/*#include <stdio.h>
-int main()
-{
-	char *src = "123456789";
-	char *bam = ft_strdup(src);
-	printf("%s\n", bam);
-}*/

@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:34:58 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/04 20:18:54 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:08:21 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	new[j] = '\0';
 	return (new);
 }
-
-// #include <stdio.h>
-// int	main()
-// {
-// 	printf("--> %s\n", ft_substr("ouga bouga", 400, 20));
-// }

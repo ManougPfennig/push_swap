@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:18:31 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/06 17:40:24 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:08:00 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		dest[j++] = s2[i++];
 	return (dest);
 }
-
-/*#include <stdio.h>
-int	main(int ac, char **av)
-{
-	printf("%s + %s =\n", av[1], av[2]);
-	printf("%s\n", ft_strjoin(av[1], av[2]));
-	(void) ac;
-}*/

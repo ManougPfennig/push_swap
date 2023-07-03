@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 18:13:34 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/03/31 21:51:30 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:07:36 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/*#include <stdio.h>
-int	main()
-{
-	printf("result --> %i", ft_memcmp("450", "450", 2));
-}*/

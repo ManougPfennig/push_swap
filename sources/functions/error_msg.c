@@ -12,9 +12,8 @@
 
 #include "../../push_swap.h"
 
-void	error_msg(int i)
+void	error_msg()
 {
-	if (i == 1)
-		ft_printf("Error\nUnvalid arguments");
-	exit(EXIT_ERROR);
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }

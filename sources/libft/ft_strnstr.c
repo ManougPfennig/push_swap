@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 16:45:42 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/06 17:35:19 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:08:14 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,3 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// int main()
-// {
-// 	char *hay = "";
-// 	char *needle = "nan";
-
-// 	printf("%s\n", ft_strnstr((void *)0, "fake", 3));
-// 	// printf("%s\n", strnstr((void *)0, "fake", 3));
-// }
