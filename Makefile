@@ -14,8 +14,7 @@ NAME = push_swap
 
 SRCS = ./main.c ./sources/functions/error_free.c \
 ./sources/functions/create_list.c ./sources/functions/ft_atoil.c \
-./sources/functions/ft_lstnew_int.c ./sources/functions/ft_strjoin_free.c \
-./sources/libft/ft_lstadd_back.c
+./sources/functions/ft_strjoin_free.c
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -23,7 +22,7 @@ OBJS = ${SRCS:.c=.o}
 
 ${NAME}: ${OBJS}
 	make -C ./sources/ft_printf
-	make -C ./sources/libft
+	make bonus -C ./sources/libft
 	gcc ${CFLAGS} ${OBJS} ./sources/ft_printf/libftprintf.a ./sources/libft/libft.a -o ${NAME}
 
 all: ${NAME}

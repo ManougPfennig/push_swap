@@ -12,12 +12,15 @@
 
 #include "push_swap.h"
 
-void	print_list(t_list *lst)
+void	print_list(t_list **lst)
 {
-	while (lst->next != NULL)
+	t_list	*lister;
+
+	lister = lst[0];
+	while (lister->next != NULL)
 	{
-		ft_printf("->%i\n", lst->content);
-		lst->next = lst->next->next;
+		ft_printf("list ->%i\n", lister->content);
+		lister = lister->next;
 	}
 }
 
@@ -31,5 +34,6 @@ int	main(int ac, char **av)
 	a = create_list(av);
 	b = NULL;
 	(void) ac;
+	print_list(a);
 	return (0);
 }
