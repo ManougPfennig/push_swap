@@ -12,7 +12,10 @@
 
 NAME = push_swap
 
-SRCS = ./sources/functions/error_msg.c ./main.c
+SRCS = ./main.c ./sources/functions/error_free.c \
+./sources/functions/create_list.c ./sources/functions/ft_atoil.c \
+./sources/functions/ft_lstnew_int.c ./sources/functions/ft_strjoin_free.c \
+./sources/libft/ft_lstadd_back.c
 
 CFLAGS = -Wall -Wextra -Werror
 

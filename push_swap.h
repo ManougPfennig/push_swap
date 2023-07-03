@@ -19,10 +19,13 @@
 # include "./sources/ft_printf/ft_printf.h"
 # include "./sources/libft/libft.h"
 # include <limits.h>
+# include <stdio.h>
 
-int		ft_atoi_usable(char	*str);
 void	error_msg();
-double	ft_atoidouble(const char *str);
-int		ft_iswspace(char c);
+t_list	**create_list(char **av);
+int		ft_atoil(char *str);
+void	ft_free(char *str);
+char	*ft_strjoin_free(char const *s1, char const *s2);
+t_list	*ft_lstnew_int(int content);
 
 #endif

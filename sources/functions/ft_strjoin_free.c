@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 17:18:31 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/03 17:01:56 by mapfenni         ###   ########.fr       */
+/*   Created: 2023/07/03 16:23:11 by mapfenni          #+#    #+#             */
+/*   Updated: 2023/07/03 16:43:39 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_free(char const *s1, char const *s2)
 {
 	int		i;
 	int		j;
@@ -22,9 +22,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	length = 0;
-	while (s1 && s1[i++])
+	while (s1[i++])
 		length++;
-	while (s2 && s2[j++])
+	while (s2[j++])
 		length++;
 	i = 0;
 	j = 0;
@@ -32,10 +32,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!(dest))
 		return (NULL);
 	dest[length] = '\0';
-	while (s1 && s1[i])
+	while (s1[i])
 		dest[j++] = s1[i++];
 	i = 0;
-	while (s2 && s2[i])
+	while (s2[i])
 		dest[j++] = s2[i++];
+	ft_free((char *)s1);
 	return (dest);
 }

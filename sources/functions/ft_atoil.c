@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_atoil.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/02 17:29:10 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/03 16:27:19 by mapfenni         ###   ########.fr       */
+/*   Created: 2023/07/03 15:57:37 by mapfenni          #+#    #+#             */
+/*   Updated: 2023/07/03 17:21:14 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+int	ft_atoil(char *str)
 {
-	t_list	*new;
+	long long	value;
+	int			i;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	value = 0;
+	while (str[i])
+	{
+		value = str[i] - '0';
+		value *= 10;
+		i++;
+	}
+	if (str[0] == '-')
+		value *= -1;
+	if (value > 2147483647 || value < -2147483648)
+		error_msg();
+	return ((int)value);
 }

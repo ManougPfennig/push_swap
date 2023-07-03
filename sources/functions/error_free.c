@@ -17,3 +17,10 @@ void	error_msg()
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
+
+void	ft_free(char *str)
+{
+	if (str)
+		free(str);
+	return ;
+}

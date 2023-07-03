@@ -12,12 +12,24 @@
 
 #include "push_swap.h"
 
-int	main()
+void	print_list(t_list *lst)
 {
-	int		i;
-	t_list	**lst;
+	while (lst->next != NULL)
+	{
+		ft_printf("->%i\n", lst->content);
+		lst->next = lst->next->next;
+	}
+}
 
-	lst = NULL;
-	i = 0;
+int	main(int ac, char **av)
+{
+	t_list	**a;
+	t_list	**b;
+
+	if (ac == 1)
+		exit(EXIT_SUCCESS);
+	a = create_list(av);
+	b = NULL;
+	(void) ac;
 	return (0);
 }
