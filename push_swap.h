@@ -24,7 +24,7 @@
 void	error_msg();
 t_list	**create_list(char **av);
 int		ft_atoil(char *str);
-void	ft_free(char *str);
+void	ft_free(char *str, char **tab);
 char	*ft_strjoin_free(char const *s1, char const *s2);
 t_list	*ft_lstnew_int(int content);
 

@@ -39,5 +39,6 @@ int	main(int ac, char **av)
 	b = NULL;
 	(void) ac;
 	print_list(a);
+	exit(EXIT_SUCCESS);
 	return (0);
 }

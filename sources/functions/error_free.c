@@ -18,9 +18,19 @@ void	error_msg()
 	exit(EXIT_FAILURE);
 }
 
-void	ft_free(char *str)
+void	ft_free(char *str, char **tab)
 {
+	int	i;
+
+	i = 0;
 	if (str)
 		free(str);
+	while (tab && tab[i])
+	{
+		free(tab[i]);
+		i++;
+	}
+	if (tab)
+		free(tab);
 	return ;
 }

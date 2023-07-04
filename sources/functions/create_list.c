@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/04 11:59:23 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/04 14:43:45 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ t_list	**create_list(char **av)
 	arg_str = NULL;
 	while (av[++i] != NULL)
 	{
-		arg_str = ft_strjoin(arg_str, av[i]);
-		arg_str = ft_strjoin(arg_str, " ");
+		arg_str = ft_strjoin_free(arg_str, av[i]);
+		arg_str = ft_strjoin_free(arg_str, " ");
 	}
 	arg_values = ft_split((const char *)arg_str, ' ');
 	check_values(arg_values);
@@ -89,5 +89,6 @@ t_list	**create_list(char **av)
 	i = -1;
 	while (arg_values[++i])
 		ft_lstadd_back(lst, ft_lstnew_int(ft_atoil(arg_values[i])));
+	ft_free(arg_str, arg_values);
 	return (lst);
 }
