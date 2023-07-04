@@ -17,28 +17,34 @@ void	print_list(t_list **lst)
 	t_list	*lister;
 	int		lol;
 
-	lister = lst[0];
-	while (lister->next != NULL)
+	lister = NULL;
+	if (lst)
+		lister = lst[0];
+	while (lst && lister->next != NULL)
 	{
 		lol = lister->content;
 		printf("list ->%d\n", lol);
 		lister = lister->next;
 	}
-	lol = lister->content;
-	printf("list ->%d\n", lol);
+	if (lst)
+	{
+		lol = lister->content;
+		printf("list ->%d\n", lol);
+	}
 }
 
 int	main(int ac, char **av)
 {
-	t_list	**a;
-	t_list	**b;
+	t_list	***piles;
 
 	if (ac == 1)
 		exit(EXIT_SUCCESS);
-	a = create_list(av);
-	b = NULL;
-	(void) ac;
-	print_list(a);
+	piles = create_piles(av);
+	print_list(piles[0]);
+	pa(piles);
+	printf("---\n");
+	print_list(piles[0]);
+	print_list(piles[1]);
 	exit(EXIT_SUCCESS);
 	return (0);
 }

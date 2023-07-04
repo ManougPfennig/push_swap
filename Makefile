@@ -14,7 +14,9 @@ NAME = push_swap
 
 SRCS = ./main.c ./sources/functions/error_free.c \
 ./sources/functions/create_list.c ./sources/functions/ft_atoil.c \
-./sources/functions/ft_strjoin_free.c ./sources/functions/ft_lstnew_int.c
+./sources/functions/ft_strjoin_free.c ./sources/functions/ft_lstnew_int.c \
+./sources/cmd/push.c ./sources/cmd/reverse_rotate.c ./sources/cmd/rotate.c \
+./sources/cmd/swap.c ./sources/functions/create_piles.c
 
 CFLAGS = -Wall -Wextra -Werror
 
