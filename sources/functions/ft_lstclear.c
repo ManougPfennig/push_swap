@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/02 17:29:10 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/03 18:26:31 by mapfenni         ###   ########.fr       */
+/*   Created: 2023/04/04 16:12:22 by mapfenni          #+#    #+#             */
+/*   Updated: 2023/07/03 18:30:54 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(int content)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*new;
+	t_list	*plist1;
+	t_list	*plist2;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (!lst || !(*lst) || !del)
+		return ;
+	plist1 = (*lst);
+	plist2 = (*lst);
+	(*lst) = NULL;
+	while (plist1->next != NULL)
+	{
+		plist2 = plist1->next;
+		del(plist1->content);
+		free(plist1);
+		plist1 = plist2;
+	}
+	del(plist1->content);
+	free(plist1);
 }

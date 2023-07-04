@@ -15,13 +15,17 @@
 void	print_list(t_list **lst)
 {
 	t_list	*lister;
+	int		lol;
 
 	lister = lst[0];
 	while (lister->next != NULL)
 	{
-		ft_printf("list ->%i\n", lister->content);
+		lol = lister->content;
+		printf("list ->%d\n", lol);
 		lister = lister->next;
 	}
+	lol = lister->content;
+	printf("list ->%d\n", lol);
 }
 
 int	main(int ac, char **av)

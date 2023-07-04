@@ -6,13 +6,13 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:12:22 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/03 18:30:54 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:59:43 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(int))
 {
 	t_list	*plist1;
 	t_list	*plist2;

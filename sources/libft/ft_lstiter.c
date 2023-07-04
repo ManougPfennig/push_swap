@@ -6,13 +6,13 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:28:47 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/04/04 16:35:57 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:00:41 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(int))
 {
 	t_list	*plist;
 

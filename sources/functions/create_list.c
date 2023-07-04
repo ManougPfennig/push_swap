@@ -6,11 +6,41 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/03 18:26:08 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:59:23 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+int	ft_tablen(char **tab)
+{
+	int	i;
+
+	i = 0;
+	while(tab && tab[i])
+		i++;
+	return (i);
+}
+
+void	check_doubles(char **arg)
+{
+	int	i;
+	int	y;
+
+	i = 0;
+	y = 1;
+	while (arg[i])
+	{
+		while (arg[y])
+		{
+			if(ft_strncmp(arg[i], arg[y], ft_strlen("-2147483648")) == 0)
+				error_msg();
+			y++;
+		}
+		i++;
+		y = i + 1;
+	}
+}
 
 void	check_values(char **arg)
 {
@@ -33,18 +63,9 @@ void	check_values(char **arg)
 		}
 		i++;
 	}
-}
-
-void	print_tab(char **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		printf("->%s\n", tab[i]);
-		i++;
-	}
+	if (ft_tablen(arg) == 1)
+		exit(EXIT_SUCCESS);
+	check_doubles(arg);
 }
 
 t_list	**create_list(char **av)
@@ -54,25 +75,19 @@ t_list	**create_list(char **av)
 	char	*arg_str;
 	int		i;
 
-	i = 1;
-	lst = NULL;
+	i = 0;
 	arg_str = NULL;
-	while (av[i] != NULL)
+	while (av[++i] != NULL)
 	{
 		arg_str = ft_strjoin(arg_str, av[i]);
 		arg_str = ft_strjoin(arg_str, " ");
-		i++;
 	}
 	arg_values = ft_split((const char *)arg_str, ' ');
 	check_values(arg_values);
-	i = 0;
 	lst = malloc(sizeof(t_list **));
-	lst[0] = malloc(sizeof(t_list *));
-	while (arg_values[i])
-	{
-		printf("value ->%d\n", ft_atoil(arg_values[i]));
-		ft_lstadd_back(lst, ft_lstnew(ft_atoil(arg_values[i])));
-		i++;
-	}
+	lst[0] = NULL;
+	i = -1;
+	while (arg_values[++i])
+		ft_lstadd_back(lst, ft_lstnew_int(ft_atoil(arg_values[i])));
 	return (lst);
 }
