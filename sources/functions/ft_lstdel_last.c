@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_piles.c                                     :+:      :+:    :+:   */
+/*   ft_lstdel_last.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 15:15:59 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/12 23:07:25 by mapfenni         ###   ########.fr       */
+/*   Created: 2023/08/12 22:47:09 by mapfenni          #+#    #+#             */
+/*   Updated: 2023/08/12 22:56:12 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_list	***create_piles(char **av)
+void	ft_lstdel_last(t_list **lst)
 {
-	t_list	***piles;
-	t_list	**a;
-	t_list	**b;
+	t_list	*lister;
 
-	a = NULL;
-	b = NULL;
-	piles = NULL;
-	a = create_list(av);
-	b = malloc(1 * sizeof(t_list **));
-	b[0] = NULL;
-	piles = malloc(2 * sizeof(t_list **));
-	if (!piles)
-	{
-		free(b);
-		error_msg();
-	}
-	piles[0] = a;
-	piles[1] = b;
-	return (piles);
+	if (lst)
+		lister = lst[0];
+	while (lister->next->next != NULL)
+		lister = lister->next;
+	lister->next = NULL;
 }

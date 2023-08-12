@@ -1,14 +1,14 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/07 13:49:45 by mapfenni          #+#    #+#              #
-#    Updated: 2023/05/30 19:41:04 by marvin           ###   ########.fr        #
+#    Created: 2023/08/12 23:03:15 by mapfenni          #+#    #+#              #
+#    Updated: 2023/08/12 23:03:15 by mapfenni         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 NAME = push_swap
 
@@ -16,7 +16,8 @@ SRCS = ./main.c ./sources/functions/error_free.c \
 ./sources/functions/create_list.c ./sources/functions/ft_atoil.c \
 ./sources/functions/ft_strjoin_free.c ./sources/functions/ft_lstnew_int.c \
 ./sources/cmd/push.c ./sources/cmd/reverse_rotate.c ./sources/cmd/rotate.c \
-./sources/cmd/swap.c ./sources/functions/create_piles.c
+./sources/cmd/swap.c ./sources/functions/create_piles.c \
+./sources/functions/ft_lstdel_last.c
 
 CFLAGS = -Wall -Wextra -Werror
 

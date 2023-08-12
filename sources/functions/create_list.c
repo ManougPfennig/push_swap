@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/07/04 14:43:45 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/12 23:06:39 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_tablen(char **tab)
 	int	i;
 
 	i = 0;
-	while(tab && tab[i])
+	while (tab && tab[i])
 		i++;
 	return (i);
 }
@@ -33,7 +33,7 @@ void	check_doubles(char **arg)
 	{
 		while (arg[y])
 		{
-			if(ft_strncmp(arg[i], arg[y], ft_strlen("-2147483648")) == 0)
+			if (ft_strncmp(arg[i], arg[y], ft_strlen("-2147483648")) == 0)
 				error_msg();
 			y++;
 		}

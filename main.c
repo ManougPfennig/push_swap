@@ -1,35 +1,31 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/30 16:15:56 by marvin            #+#    #+#             */
-/*   Updated: 2023/05/30 19:50:06 by marvin           ###   ########.fr       */
+/*   Created: 2023/08/12 22:49:24 by mapfenni          #+#    #+#             */
+/*   Updated: 2023/08/12 22:49:24 by mapfenni         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_list(t_list **lst)
+void	print_list(t_list **lst, char chain)
 {
 	t_list	*lister;
-	int		lol;
+	int		value;
 
 	lister = NULL;
+	value = 0;
 	if (lst)
 		lister = lst[0];
-	while (lst && lister->next != NULL)
+	while (lister != NULL)
 	{
-		lol = lister->content;
-		printf("list ->%d\n", lol);
+		value = lister->content;
+		printf("%clist-> %i\n", chain, value);
 		lister = lister->next;
-	}
-	if (lst)
-	{
-		lol = lister->content;
-		printf("list ->%d\n", lol);
 	}
 }
 
@@ -40,11 +36,18 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		exit(EXIT_SUCCESS);
 	piles = create_piles(av);
-	print_list(piles[0]);
-	pa(piles);
+	pb(piles);
+	pb(piles);
 	printf("---\n");
-	print_list(piles[0]);
-	print_list(piles[1]);
+	print_list(piles[0], 'a');
+	printf("---\n");
+	print_list(piles[1], 'b');
+	rrr(piles);
+	printf("---\n");
+	print_list(piles[0], 'a');
+	printf("---\n");
+	print_list(piles[1], 'b');
+	printf("---\n");
 	exit(EXIT_SUCCESS);
 	return (0);
 }
