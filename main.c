@@ -27,6 +27,7 @@ void	print_list(t_list **lst, char chain)
 		printf("%clist-> %i\n", chain, value);
 		lister = lister->next;
 	}
+	printf("---\n");
 }
 
 int	main(int ac, char **av)
@@ -36,18 +37,10 @@ int	main(int ac, char **av)
 	if (ac == 1)
 		exit(EXIT_SUCCESS);
 	piles = create_piles(av);
-	pb(piles);
-	pb(piles);
-	printf("---\n");
-	print_list(piles[0], 'a');
-	printf("---\n");
-	print_list(piles[1], 'b');
-	rrr(piles);
-	printf("---\n");
-	print_list(piles[0], 'a');
-	printf("---\n");
-	print_list(piles[1], 'b');
-	printf("---\n");
+	if (check_order(piles))
+		exit(EXIT_SUCCESS);
+	if (ft_lstsize(piles[0][0]) <= 5)
+		small_list(piles);
 	exit(EXIT_SUCCESS);
 	return (0);
 }

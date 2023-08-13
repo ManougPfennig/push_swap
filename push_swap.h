@@ -29,6 +29,8 @@ char	*ft_strjoin_free(char const *s1, char const *s2);
 t_list	*ft_lstnew_int(int content);
 t_list	***create_piles(char **av);
 void	ft_lstdel_last(t_list **lst);
+int		check_order(t_list ***piles);
+void	small_list(t_list ***piles);
 void	sa(t_list ***lst);
 void	sb(t_list ***lst);
 void	ss(t_list ***lst);
