@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:19:24 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/21 18:28:15 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:38:41 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,32 @@ void	size_three(t_list ***piles)
 	}
 }
 
-void	five_pp(t_list ***piles)
+int	five_pp(t_list ***piles)
 {
-	
+	int	move;
+
+	move = 0;
+	if (piles[1][0] && big_v(piles[0]) < piles[1][0]->content && \
+		piles[0][0]->content == big_v(piles[0]))
+	{
+		pa(piles);
+		if (ft_lstlast(piles[0][0])->content < piles[0][0]->content)
+			sa(piles);
+		move++;
+	}
+	if (piles[1][0] && ft_lstsize(piles[1][0]) > 1 && \
+	piles[1][0]->next->content < piles[0][0]->content)
+	{
+		rb(piles);
+		pa(piles);
+		move++;
+	}
+	if (piles[1][0] && piles[1][0]->content < piles[0][0]->content)
+	{
+		pa(piles);
+		move++;
+	}
+	return (move);
 }
 
 void	five_p(t_list ***piles)
@@ -74,26 +97,7 @@ void	five(t_list ***piles)
 	while (ft_lstsize(piles[1][0]) != 0)
 	{
 		five_p(piles);
-		if (piles[1][0] && big_v(piles[0]) < piles[1][0]->content && \
-		piles[0][0]->content == big_v(piles[0]))
-		{
-			pa(piles);
-			if (ft_lstlast(piles[0][0])->content < piles[0][0]->content)
-				sa(piles);
-			move++;
-		}
-		if (piles[1][0] && ft_lstsize(piles[1][0]) > 1 && \
-		piles[1][0]->next->content < piles[0][0]->content)
-		{
-			rb(piles);
-			pa(piles);
-			move++;
-		}
-		if (piles[1][0] && piles[1][0]->content < piles[0][0]->content)
-		{
-			pa(piles);
-			move++;
-		}
+		move = five_pp(piles);
 		if (piles[1][0] && check_order(piles) == 1 && \
 		piles[1][0]->content > big_v(piles[0]) && ft_lstsize(piles[1][0]) == 1)
 		{
@@ -128,21 +132,3 @@ void	four(t_list ***piles)
 		ra(piles);
 }
 
-void	small_list(t_list ***piles)
-{
-	t_list	*lister;
-
-	lister = piles[0][0];
-	if (ft_lstsize(lister) == 2)
-	{
-		ft_printf("ss\n");
-		exit(EXIT_SUCCESS);
-	}
-	if (ft_lstsize(lister) == 3)
-	{
-		size_three(piles);
-		exit(EXIT_SUCCESS);
-	}
-	four(piles);
-	exit(EXIT_SUCCESS);
-}

@@ -39,6 +39,25 @@ void	print_list(t_list ***piles)
 	}
 }
 
+void	small_list(t_list ***piles)
+{
+	t_list	*lister;
+
+	lister = piles[0][0];
+	if (ft_lstsize(lister) == 2)
+	{
+		ft_printf("ss\n");
+		exit(EXIT_SUCCESS);
+	}
+	if (ft_lstsize(lister) == 3)
+	{
+		size_three(piles);
+		exit(EXIT_SUCCESS);
+	}
+	four(piles);
+	exit(EXIT_SUCCESS);
+}
+
 int	main(int ac, char **av)
 {
 	t_list	***piles;

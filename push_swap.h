@@ -34,6 +34,8 @@ void	fix_order(t_list ***piles);
 int		sml_v(t_list **pile);
 int		big_v(t_list **pile);
 void	small_list(t_list ***piles);
+void	size_three(t_list ***piles);
+void	four(t_list ***piles);
 void	print_list(t_list ***piles);
 void	sa(t_list ***lst);
 void	sb(t_list ***lst);
