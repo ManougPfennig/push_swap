@@ -18,7 +18,7 @@ SRCS = ./main.c ./sources/functions/error_free.c \
 ./sources/cmd/push.c ./sources/cmd/reverse_rotate.c ./sources/cmd/rotate.c \
 ./sources/cmd/swap.c ./sources/functions/create_piles.c \
 ./sources/functions/ft_lstdel_last.c ./sources/functions/small_list.c \
-./sources/functions/check_order.c
+./sources/functions/check_order.c ./sources/functions/biggest_smallest.c
 
 CFLAGS = -Wall -Wextra -Werror
 

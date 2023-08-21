@@ -12,22 +12,31 @@
 
 #include "push_swap.h"
 
-void	print_list(t_list **lst, char chain)
+void	print_list(t_list ***piles)
 {
-	t_list	*lister;
-	int		value;
+	t_list	*alist;
+	t_list	*blist;
 
-	lister = NULL;
-	value = 0;
-	if (lst)
-		lister = lst[0];
-	while (lister != NULL)
+	alist = NULL;
+	blist = NULL;
+	if (piles[0][0])
+		alist = piles[0][0];
+	if (piles[1][0])
+		blist = piles[1][0];
+	while (alist != NULL || blist != NULL)
 	{
-		value = lister->content;
-		printf("%clist-> %i\n", chain, value);
-		lister = lister->next;
+		if (alist != NULL)
+		{
+			printf("-%i	", alist->content);
+			alist = alist->next;
+		}
+		if (blist != NULL)
+		{
+			printf("-%i	", blist->content);
+			blist = blist->next;
+		}
+		printf("\n");
 	}
-	printf("---\n");
 }
 
 int	main(int ac, char **av)
