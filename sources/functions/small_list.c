@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:19:24 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/21 18:21:21 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:28:15 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,32 @@ void	size_three(t_list ***piles)
 	}
 }
 
+void	five_pp(t_list ***piles)
+{
+	
+}
+
+void	five_p(t_list ***piles)
+{
+	if (piles[1][0] && ft_lstsize(piles[0][0]) == 4 && \
+		piles[0][0]->content < piles[0][0]->next->content \
+		&& piles[0][0]->next->content < piles[0][0]->next->next->content && \
+		piles[0][0]->next->next->next->content < piles[0][0]->content && \
+		piles[1][0]->content > big_v(piles[0]))
+	{
+		rra(piles);
+		pa(piles);
+		ra(piles);
+	}
+	if (piles[1][0] && piles[1][0]->content > big_v(piles[0]) && \
+		piles[1][0]->content < big_v(piles[1]) && ft_lstsize(piles[1][0]) == 2 \
+		&& check_order(piles) == 1)
+	{
+		pa(piles);
+		ra(piles);
+	}
+}
+
 void	five(t_list ***piles)
 {
 	int	move;
@@ -47,23 +73,7 @@ void	five(t_list ***piles)
 	move = 0;
 	while (ft_lstsize(piles[1][0]) != 0)
 	{
-		if (piles[1][0] && ft_lstsize(piles[0][0]) == 4 && \
-		piles[0][0]->content < piles[0][0]->next->content \
-		&& piles[0][0]->next->content < piles[0][0]->next->next->content && \
-		piles[0][0]->next->next->next->content < piles[0][0]->content && \
-		piles[1][0]->content > big_v(piles[0]))
-		{
-			rra(piles);
-			pa(piles);
-			ra(piles);
-		}
-		if (piles[1][0] && piles[1][0]->content > big_v(piles[0]) && \
-		piles[1][0]->content < big_v(piles[1]) && ft_lstsize(piles[1][0]) == 2 \
-		&& check_order(piles) == 1)
-		{
-			pa(piles);
-			ra(piles);
-		}
+		five_p(piles);
 		if (piles[1][0] && big_v(piles[0]) < piles[1][0]->content && \
 		piles[0][0]->content == big_v(piles[0]))
 		{

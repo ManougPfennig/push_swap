@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:28:58 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/20 17:28:30 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/21 18:23:49 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ int	check_order(t_list ***piles)
 
 void	fix_order(t_list ***piles)
 {
-	t_list *lister;
+	t_list	*lister;
 	int		move;
-	int		error = 20;
 
 	lister = piles[0][0];
 	move = 0;
@@ -43,18 +42,8 @@ void	fix_order(t_list ***piles)
 	}
 	if (move > 2)
 		while (check_order(piles) == 0)
-		{
 			rra(piles);
-			error--;
-			if (!error)
-				exit(EXIT_FAILURE);
-		}
 	else
 		while (check_order(piles) == 0)
-		{
 			ra(piles);
-			error--;
-			if (!error)
-				exit(EXIT_FAILURE);
-		}
 }
