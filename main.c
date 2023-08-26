@@ -45,16 +45,12 @@ void	small_list(t_list ***piles)
 
 	lister = piles[0][0];
 	if (ft_lstsize(lister) == 2)
-	{
 		ft_printf("ss\n");
-		exit(EXIT_SUCCESS);
-	}
-	if (ft_lstsize(lister) == 3)
-	{
+	else if (ft_lstsize(lister) == 3)
 		size_three(piles);
-		exit(EXIT_SUCCESS);
-	}
-	four(piles);
+	else
+		four(piles);
+	system("leaks push_swap");
 	exit(EXIT_SUCCESS);
 }
 
@@ -69,6 +65,10 @@ int	main(int ac, char **av)
 		exit(EXIT_SUCCESS);
 	if (ft_lstsize(piles[0][0]) <= 5)
 		small_list(piles);
+	else
+		radix(piles);
+	free_piles(piles);
+	system("leaks push_swap");
 	exit(EXIT_SUCCESS);
 	return (0);
 }

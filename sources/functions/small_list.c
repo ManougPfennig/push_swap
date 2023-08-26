@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:19:24 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/21 18:38:41 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/26 19:13:12 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,6 @@ void	five(t_list ***piles)
 		move = 0;
 	}
 	fix_order(piles);
-	exit(EXIT_SUCCESS);
 }
 
 void	four(t_list ***piles)
@@ -120,15 +119,18 @@ void	four(t_list ***piles)
 	size_three(piles);
 	if (ft_lstsize(piles[1][0]) == 2)
 		five(piles);
-	if (piles[1][0]->content > big_v(piles[0]))
-		pa(piles);
 	else
 	{
-		while (piles[1][0]->content > piles[0][0]->content)
+		if (piles[1][0]->content > big_v(piles[0]))
+			pa(piles);
+		else
+		{
+			while (piles[1][0]->content > piles[0][0]->content)
+				ra(piles);
+			pa(piles);
+		}
+		while (check_order(piles) == 0)
 			ra(piles);
-		pa(piles);
 	}
-	while (check_order(piles) == 0)
-		ra(piles);
 }
 

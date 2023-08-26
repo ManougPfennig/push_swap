@@ -34,3 +34,23 @@ void	ft_free(char *str, char **tab)
 		free(tab);
 	return ;
 }
+
+void	free_piles(t_list ***piles)
+{
+	t_list	*lister;
+	t_list	*to_free;
+
+	lister = piles[0][0];
+	while (lister)
+	{
+		to_free = lister;
+		lister = lister->next;
+		free(to_free);
+	}
+	if (piles[0])
+		free(piles[0]);
+	if (piles[1])
+		free(piles[1]);
+	if (piles)
+		free(piles);
+}
