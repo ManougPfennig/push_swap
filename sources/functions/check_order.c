@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:28:58 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/21 18:23:49 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/27 21:01:29 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check_order(t_list ***piles)
 {
-	t_list	*lister;
-	int		value;
+	t_list		*lister;
+	long long	value;
 
 	lister = piles[0][0];
 	while (lister->next != NULL)

@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:10:52 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/27 17:43:05 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/27 21:08:34 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	bits_max(t_list ***piles)
 {
-	int	max;
-	int	big;
+	int			max;
+	long long	big;
 
 	big = big_v(piles[0]);
 	max = 0;
@@ -51,12 +51,4 @@ void	radix(t_list ***piles)
 			pa(piles);
 		i++;
 	}
-	while (ft_lstlast(piles[0][0])->neg == -1)
-	{
-		rra(piles);
-		pb(piles);
-	}
-	while (ft_lstsize(piles[1][0]))
-		pa(piles);
-	print_list(piles);
 }

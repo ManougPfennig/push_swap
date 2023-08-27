@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:37:27 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/27 17:30:31 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/27 19:48:22 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@
 
 typedef struct s_list
 {
-	int				content;
-	int				neg;
+	long long		content;
 	struct s_list	*next;
 }				t_list;
 

@@ -6,16 +6,16 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 02:56:19 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/15 03:22:41 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/27 20:50:05 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-int	sml_v(t_list **pile)
+long long	sml_v(t_list **pile)
 {
-	int		value;
-	t_list	*lister;
+	long long	value;
+	t_list		*lister;
 
 	value = 0;
 	lister = NULL;
@@ -32,10 +32,10 @@ int	sml_v(t_list **pile)
 	return (value);
 }
 
-int	big_v(t_list **pile)
+long long	big_v(t_list **pile)
 {
-	int		value;
-	t_list	*lister;
+	long long	value;
+	t_list		*lister;
 
 	value = 0;
 	lister = NULL;

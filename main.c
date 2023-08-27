@@ -27,12 +27,12 @@ void	print_list(t_list ***piles)
 	{
 		if (alist != NULL)
 		{
-			printf("%i	", alist->content);
-			printf("%i	", alist->neg);
+			printf("%lli	", alist->content);
 			alist = alist->next;
 		}
 		if (blist != NULL)
 		{
+			printf("%lli	", blist->content);
 			blist = blist->next;
 		}
 		printf("\n");
@@ -41,12 +41,9 @@ void	print_list(t_list ***piles)
 
 void	small_list(t_list ***piles)
 {
-	t_list	*lister;
-
-	lister = piles[0][0];
-	if (ft_lstsize(lister) == 2)
+	if (ft_lstsize(piles[0][0]) == 2)
 		ft_printf("ss\n");
-	else if (ft_lstsize(lister) == 3)
+	else if (ft_lstsize(piles[0][0]) == 3)
 		size_three(piles);
 	else
 		four(piles);
