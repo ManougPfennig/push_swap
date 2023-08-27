@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:54:42 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/14 16:13:36 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/28 00:24:46 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sa(t_list ***lst)
 {
-	int	temp;
+	long long	temp;
 
 	if (lst[0][0] && ft_lstsize(lst[0][0]) > 1)
 	{
@@ -28,7 +28,7 @@ void	sa(t_list ***lst)
 
 void	sb(t_list ***lst)
 {
-	int	temp;
+	long long	temp;
 
 	if (lst[1][0] && ft_lstsize(lst[1][0]) > 1)
 	{
@@ -42,7 +42,7 @@ void	sb(t_list ***lst)
 
 void	ss(t_list ***lst)
 {
-	int	temp;
+	long long	temp;
 
 	if (lst[0][0] && ft_lstsize(lst[0][0]) > 1)
 	{

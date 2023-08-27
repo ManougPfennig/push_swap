@@ -47,7 +47,6 @@ void	small_list(t_list ***piles)
 		size_three(piles);
 	else
 		four(piles);
-	exit(EXIT_SUCCESS);
 }
 
 int	main(int ac, char **av)
