@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/12 23:06:39 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/27 17:28:27 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_list	**create_list(char **av)
 	lst[0] = NULL;
 	i = -1;
 	while (arg_values[++i])
-		ft_lstadd_back(lst, ft_lstnew_int(ft_atoil(arg_values[i])));
+		ft_lstadd_back(lst, ft_lstnew_int(ft_atoil(arg_values[i]), 2));
 	ft_free(arg_str, arg_values);
 	return (lst);
 }

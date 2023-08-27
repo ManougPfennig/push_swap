@@ -27,12 +27,12 @@ void	print_list(t_list ***piles)
 	{
 		if (alist != NULL)
 		{
-			printf("-%i	", alist->content);
+			printf("%i	", alist->content);
+			printf("%i	", alist->neg);
 			alist = alist->next;
 		}
 		if (blist != NULL)
 		{
-			printf("-%i	", blist->content);
 			blist = blist->next;
 		}
 		printf("\n");
@@ -50,7 +50,6 @@ void	small_list(t_list ***piles)
 		size_three(piles);
 	else
 		four(piles);
-	system("leaks push_swap");
 	exit(EXIT_SUCCESS);
 }
 
@@ -62,13 +61,15 @@ int	main(int ac, char **av)
 		exit(EXIT_SUCCESS);
 	piles = create_piles(av);
 	if (check_order(piles))
+	{
+		free_piles(piles);
 		exit(EXIT_SUCCESS);
-	if (ft_lstsize(piles[0][0]) <= 5)
+	}
+	else if (ft_lstsize(piles[0][0]) <= 5)
 		small_list(piles);
 	else
 		radix(piles);
 	free_piles(piles);
-	system("leaks push_swap");
 	exit(EXIT_SUCCESS);
 	return (0);
 }

@@ -27,7 +27,7 @@ int		ft_atoil(char *str);
 void	ft_free(char *str, char **tab);
 void	free_piles(t_list ***piles);
 char	*ft_strjoin_free(char const *s1, char const *s2);
-t_list	*ft_lstnew_int(int content);
+t_list	*ft_lstnew_int(int content, int init);
 t_list	***create_piles(char **av);
 void	ft_lstdel_last(t_list **lst);
 int		check_order(t_list ***piles);

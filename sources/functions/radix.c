@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:10:52 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/26 18:51:31 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/27 17:43:05 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	radix(t_list ***piles)
 	lister = piles[0][0];
 	len = ft_lstsize(piles[0][0]);
 	bit_max = bits_max(piles);
-	while (i < bit_max || check_order(piles) == 0)
+	while (i < bit_max)
 	{
 		j = 0;
 		while (j++ < len)
@@ -51,4 +51,12 @@ void	radix(t_list ***piles)
 			pa(piles);
 		i++;
 	}
+	while (ft_lstlast(piles[0][0])->neg == -1)
+	{
+		rra(piles);
+		pb(piles);
+	}
+	while (ft_lstsize(piles[1][0]))
+		pa(piles);
+	print_list(piles);
 }
