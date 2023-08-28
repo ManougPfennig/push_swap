@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:28:58 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/27 21:01:29 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/28 19:07:15 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,18 @@ void	fix_order(t_list ***piles)
 	else
 		while (check_order(piles) == 0)
 			ra(piles);
+}
+
+int	check_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ')
+			return (1);
+		i++;
+	}
+	return (0);
 }

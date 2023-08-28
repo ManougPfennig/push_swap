@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:10:52 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/27 21:08:34 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/28 19:11:49 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	radix(t_list ***piles)
 	int		i;
 	int		j;
 
+	change_to_index(piles);
 	i = 0;
 	lister = piles[0][0];
 	len = ft_lstsize(piles[0][0]);

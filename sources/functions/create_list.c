@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/27 19:47:59 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/28 17:06:26 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,9 @@ t_list	**create_list(char **av)
 	arg_str = NULL;
 	while (av[++i] != NULL)
 	{
+		if (av[i][0] == '\0' || check_spaces(av[i]) == 0 || (av[i][0] == '0'\
+		&& av[i][1] != '\n') || (av[i][0] == '-' && av[i][1] == '0'))
+			error_msg();
 		arg_str = ft_strjoin_free(arg_str, av[i]);
 		arg_str = ft_strjoin_free(arg_str, " ");
 	}

@@ -19,7 +19,7 @@ SRCS = ./main.c ./sources/functions/error_free.c \
 ./sources/cmd/swap.c ./sources/functions/create_piles.c \
 ./sources/functions/ft_lstdel_last.c ./sources/functions/small_list.c \
 ./sources/functions/check_order.c ./sources/functions/biggest_smallest.c \
-./sources/functions/radix.c
+./sources/functions/radix.c ./sources/functions/change_to_index.c
 
 CFLAGS = -Wall -Wextra -Werror
 
