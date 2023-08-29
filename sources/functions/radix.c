@@ -6,11 +6,18 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:10:52 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/28 19:11:49 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/29 18:32:11 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+int	move_back(t_list ***piles)
+{
+	while (ft_lstsize(piles[1][0]) != 0)
+		pa(piles);
+	return (1);
+}
 
 int	bits_max(t_list ***piles)
 {
@@ -48,8 +55,6 @@ void	radix(t_list ***piles)
 			else
 				pb(piles);
 		}
-		while (ft_lstsize(piles[1][0]) != 0)
-			pa(piles);
-		i++;
+		i = i + move_back(piles);
 	}
 }
