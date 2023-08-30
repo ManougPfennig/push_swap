@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 17:33:29 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/28 19:13:55 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/30 18:52:15 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	change_to_index(t_list ***piles)
 {
 	t_list		*lister;
 	long long	*tab;
-	int			i;
+	long long	i;
 
 	lister = piles[0][0];
 	tab = malloc(ft_lstsize(piles[0][0]) * sizeof(long long));
@@ -64,4 +64,5 @@ void	change_to_index(t_list ***piles)
 		lister->content = i;
 		lister = lister->next;
 	}
+	free(tab);
 }
