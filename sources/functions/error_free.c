@@ -12,8 +12,9 @@
 
 #include "../../push_swap.h"
 
-void	error_msg(void)
+void	error_msg(char *str, char **tab)
 {
+	ft_free(str, tab);
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
@@ -41,6 +42,13 @@ void	free_piles(t_list ***piles)
 	t_list	*to_free;
 
 	lister = piles[0][0];
+	while (lister)
+	{
+		to_free = lister;
+		lister = lister->next;
+		free(to_free);
+	}
+	lister = piles[1][0];
 	while (lister)
 	{
 		to_free = lister;

@@ -12,31 +12,27 @@
 
 #include "push_swap.h"
 
-void	print_list(t_list ***piles)
+int	pre_check(char **av)
 {
-	t_list	*alist;
-	t_list	*blist;
+	int	i;
+	int	y;
 
-	alist = NULL;
-	blist = NULL;
-	if (piles[0][0])
-		alist = piles[0][0];
-	if (piles[1][0])
-		blist = piles[1][0];
-	while (alist != NULL || blist != NULL)
+	y = 1;
+	while (av[y])
 	{
-		if (alist != NULL)
+		i = 0;
+		if (av[y][i] == '-')
+			i++;
+		while (av[y][i])
 		{
-			printf("%lli	", alist->content);
-			alist = alist->next;
+			if ((av[y][i] > '9' || av[y][i] < '0') && av[y][i] != ' ' \
+			&& av[y][i] != '-')
+				error_msg(NULL, NULL);
+			i++;
 		}
-		if (blist != NULL)
-		{
-			printf("%lli	", blist->content);
-			blist = blist->next;
-		}
-		printf("\n");
+		y++;
 	}
+	return (0);
 }
 
 void	small_list(t_list ***piles)
@@ -55,6 +51,7 @@ int	main(int ac, char **av)
 
 	if (ac == 1)
 		exit(EXIT_SUCCESS);
+	pre_check(av);
 	piles = create_piles(av);
 	if (check_order(piles))
 	{

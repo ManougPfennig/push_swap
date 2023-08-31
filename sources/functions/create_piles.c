@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:15:59 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/12 23:07:25 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/30 19:48:11 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	***create_piles(char **av)
 	if (!piles)
 	{
 		free(b);
-		error_msg();
+		error_msg(NULL, NULL);
 	}
 	piles[0] = a;
 	piles[1] = b;

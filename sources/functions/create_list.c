@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/28 17:06:26 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/08/31 15:47:09 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_tablen(char **tab)
 	return (i);
 }
 
-void	check_doubles(char **arg)
+void	check_doubles(char *str, char **arg)
 {
 	int	i;
 	int	y;
@@ -34,7 +34,7 @@ void	check_doubles(char **arg)
 		while (arg[y])
 		{
 			if (ft_strncmp(arg[i], arg[y], ft_strlen("-2147483648")) == 0)
-				error_msg();
+				error_msg(str, arg);
 			y++;
 		}
 		i++;
@@ -42,7 +42,7 @@ void	check_doubles(char **arg)
 	}
 }
 
-void	check_values(char **arg)
+void	check_values(char *str, char **arg)
 {
 	int	i;
 	int	y;
@@ -51,21 +51,24 @@ void	check_values(char **arg)
 	while (arg[i])
 	{
 		if (ft_strlen(arg[i]) > ft_strlen("-2147483648"))
-			error_msg();
+			error_msg(str, arg);
 		y = 0;
 		while (arg[i][y])
 		{
 			if (y == 0 && arg[i][y] == '-')
 				y++;
 			if (!(arg[i][y] >= '0' && arg[i][y] <= '9'))
-				error_msg();
+				error_msg(str, arg);
 			y++;
 		}
 		i++;
 	}
 	if (ft_tablen(arg) == 1)
+	{
+		ft_free(str, arg);
 		exit(EXIT_SUCCESS);
-	check_doubles(arg);
+	}
+	check_doubles(str, arg);
 }
 
 t_list	**create_list(char **av)
@@ -77,16 +80,17 @@ t_list	**create_list(char **av)
 
 	i = 0;
 	arg_str = NULL;
+	arg_values = NULL;
 	while (av[++i] != NULL)
 	{
 		if (av[i][0] == '\0' || check_spaces(av[i]) == 0 || (av[i][0] == '0'\
 		&& av[i][1] != '\n') || (av[i][0] == '-' && av[i][1] == '0'))
-			error_msg();
+			error_msg(arg_str, arg_values);
 		arg_str = ft_strjoin_free(arg_str, av[i]);
 		arg_str = ft_strjoin_free(arg_str, " ");
 	}
 	arg_values = ft_split((const char *)arg_str, ' ');
-	check_values(arg_values);
+	check_values(arg_str, arg_values);
 	lst = malloc(sizeof(t_list **));
 	lst[0] = NULL;
 	i = -1;

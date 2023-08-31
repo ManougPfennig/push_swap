@@ -21,7 +21,7 @@
 # include <limits.h>
 # include <stdio.h>
 
-void		error_msg(void);
+void		error_msg(char *str, char **tab);
 t_list		**create_list(char **av);
 long long	ft_atoil(char *str);
 void		ft_free(char *str, char **tab);
