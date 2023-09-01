@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:31:53 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/31 15:47:09 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:22:11 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ void	check_values(char *str, char **arg)
 	i = 0;
 	while (arg[i])
 	{
-		if (ft_strlen(arg[i]) > ft_strlen("-2147483648"))
+		if ((arg[i][1] == '0' && arg[i][0] == '-') || \
+		(arg[i][0] == '0' && arg[i][1] != '\0'))
+			error_msg(str, arg);
+		if (ft_atoil(arg[i]) > 2147483647 || ft_atoil(arg[i]) < -2147483648)
 			error_msg(str, arg);
 		y = 0;
 		while (arg[i][y])
@@ -62,11 +65,6 @@ void	check_values(char *str, char **arg)
 			y++;
 		}
 		i++;
-	}
-	if (ft_tablen(arg) == 1)
-	{
-		ft_free(str, arg);
-		exit(EXIT_SUCCESS);
 	}
 	check_doubles(str, arg);
 }
@@ -83,8 +81,8 @@ t_list	**create_list(char **av)
 	arg_values = NULL;
 	while (av[++i] != NULL)
 	{
-		if (av[i][0] == '\0' || check_spaces(av[i]) == 0 || (av[i][0] == '0'\
-		&& av[i][1] != '\n') || (av[i][0] == '-' && av[i][1] == '0'))
+		if (av[i][0] == '\0' || check_spaces(av[i]) == 0 || \
+		(av[i][0] == '-' && av[i][1] == '0'))
 			error_msg(arg_str, arg_values);
 		arg_str = ft_strjoin_free(arg_str, av[i]);
 		arg_str = ft_strjoin_free(arg_str, " ");

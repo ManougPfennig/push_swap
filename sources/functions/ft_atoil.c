@@ -6,7 +6,7 @@
 /*   By: mapfenni <mapfenni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:57:37 by mapfenni          #+#    #+#             */
-/*   Updated: 2023/08/30 19:45:54 by mapfenni         ###   ########.fr       */
+/*   Updated: 2023/09/01 16:24:47 by mapfenni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ long long	ft_atoil(char *str)
 	}
 	if (str[0] == '-')
 		value *= -1;
-	if (value > 2147483647 || value < -2147483648)
-		error_msg(str, NULL);
-	return ((value + 2147483648));
+	return ((value));
 }
